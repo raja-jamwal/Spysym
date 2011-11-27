@@ -1,0 +1,107 @@
+Spysym 007 is a mini filter file system that prevents kernel level execution of executable code and files from the removable devices, thus preventing possible malware infection. spysym007 insists on using data archives{.zip,.rar,.tar..} for data sharing.
+
+Following extensions are prevented from execution
+
+    RTL_CONSTANT_STRING( L"ade"), 
+
+    RTL_CONSTANT_STRING( L"adp"), 
+
+    RTL_CONSTANT_STRING( L"bas"), 
+
+    RTL_CONSTANT_STRING( L"bat"), 
+
+    RTL_CONSTANT_STRING( L"chm"), 
+
+    RTL_CONSTANT_STRING( L"cmd"), 
+
+    RTL_CONSTANT_STRING( L"com"), 
+
+    RTL_CONSTANT_STRING( L"cpl"), 
+
+    RTL_CONSTANT_STRING( L"crt"), 
+
+    RTL_CONSTANT_STRING( L"dll"), 
+
+    RTL_CONSTANT_STRING( L"doc"), 
+
+    RTL_CONSTANT_STRING( L"docs"), 
+
+    RTL_CONSTANT_STRING( L"docx"), 
+
+    RTL_CONSTANT_STRING( L"exe"), 
+
+    RTL_CONSTANT_STRING( L"hlp"), 
+
+    RTL_CONSTANT_STRING( L"hta"), 
+
+    RTL_CONSTANT_STRING( L"inf"), 
+
+    RTL_CONSTANT_STRING( L"ins"), 
+
+    RTL_CONSTANT_STRING( L"isp"), 
+
+    RTL_CONSTANT_STRING( L"js"), 
+
+    RTL_CONSTANT_STRING( L"jse"), 
+
+    RTL_CONSTANT_STRING( L"lnk"), 
+
+    RTL_CONSTANT_STRING( L"mdb"), 
+
+    RTL_CONSTANT_STRING( L"mde"), 
+
+    RTL_CONSTANT_STRING( L"msc"), 
+
+    RTL_CONSTANT_STRING( L"msi"), 
+
+    RTL_CONSTANT_STRING( L"msp"), 
+
+    RTL_CONSTANT_STRING( L"mst"), 
+
+    RTL_CONSTANT_STRING( L"ocx"), 
+
+    RTL_CONSTANT_STRING( L"pcd"), 
+
+    RTL_CONSTANT_STRING( L"pif"), 
+
+    RTL_CONSTANT_STRING( L"pot"), 
+
+    RTL_CONSTANT_STRING( L"ppt"), 
+
+    RTL_CONSTANT_STRING( L"reg"), 
+
+    RTL_CONSTANT_STRING( L"scr"), 
+
+    RTL_CONSTANT_STRING( L"sct"), 
+
+    RTL_CONSTANT_STRING( L"shb"), 
+
+    RTL_CONSTANT_STRING( L"shs"), 
+
+    RTL_CONSTANT_STRING( L"sys"), 
+
+    RTL_CONSTANT_STRING( L"url"), 
+
+    RTL_CONSTANT_STRING( L"vb"), 
+
+    RTL_CONSTANT_STRING( L"vbe"), 
+
+    RTL_CONSTANT_STRING( L"vbs"), 
+
+    RTL_CONSTANT_STRING( L"wsc"), 
+
+    RTL_CONSTANT_STRING( L"wsf"), 
+
+    RTL_CONSTANT_STRING( L"wsh"), 
+
+    RTL_CONSTANT_STRING( L"xls"), 
+
+    {0, 0, NULL} 
+
+The package come with no installation program, right click .inf file that comes with it, click install, driver can be dynamically loaded, reloaded, removed.
+
+first install then, when you need driver, like prevent execution, in command prompt type sc start spysym007
+
+similarly, to stop driver sc stop spysym007
+
+Spysym 007 (c) Raja Jamwal 2010  <linux1@zoho.com> 

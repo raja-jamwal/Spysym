@@ -1,0 +1,94 @@
+;;;
+;;; SpySym 007 
+;;;
+;;;
+;;; Copyright (c) 2010, Raja Networks, Raja Jamwal
+;;; <www.experiblog.co.cc> <linux1@zoho.com>
+
+[Version]
+Signature   = "$Windows NT$"
+Class       = "ActivityMonitor"             
+ClassGuid   = {b86dff51-a31e-4bac-b3cf-e8cfe75c9fc2}    
+Provider    = %RNET%
+DriverVer   = 01/9/2010,1.0.0.0
+
+
+[DestinationDirs]
+DefaultDestDir          = 12
+SpySym.DriverFiles  = 12
+
+;;
+;; Default install sections
+;;
+
+[DefaultInstall]
+OptionDesc  = %ServiceDescription%
+CopyFiles   = SpySym.DriverFiles
+
+[DefaultInstall.Services]
+AddService  = %ServiceName%,,SpySym.Service
+
+;;
+;; Default uninstall sections
+;;
+
+[DefaultUninstall]
+DelFiles   = SpySym.DriverFiles
+
+[DefaultUninstall.Services]
+DelService = %ServiceName%,0x200    
+
+;
+; Services Section
+;
+
+[SpySym.Service]
+DisplayName      = %ServiceName%
+Description      = %ServiceDescription%
+ServiceBinary    = %12%\%DriverName%.sys    ;%windir%\system32\drivers\
+Dependencies     = "FltMgr"
+ServiceType      = 2                        ;SERVICE_FILE_SYSTEM_DRIVER
+StartType        = 3                        ;SERVICE_DEMAND_START, 2 = SERVICE_AUTO_START 
+ErrorControl     = 1                        ;SERVICE_ERROR_NORMAL
+LoadOrderGroup   = "FSFilter Activity Monitor"
+AddReg           = SpySym.AddRegistry
+
+;
+; Registry Modifications
+;
+
+[SpySym.AddRegistry]
+HKR,"Instances","DefaultInstance",0x00000000,%DefaultInstance%
+HKR,"Instances\"%Instance1.Name%,"Altitude",0x00000000,%Instance1.Altitude%
+HKR,"Instances\"%Instance1.Name%,"Flags",0x00010001,%Instance1.Flags%
+
+;
+; Copy Files
+;
+
+[SpySym.DriverFiles]
+%DriverName%.sys
+
+[SourceDisksFiles]
+spysym007.sys = 1,,
+
+[SourceDisksNames]
+1 = %DiskId1%,,,
+
+;;
+;; String Section
+;;
+
+[Strings]
+RNET                    = "Raja Networks"
+ServiceDescription      = "SpySym007 Spyware Symptom driver"
+ServiceName             = "SpySym007"
+DriverName              = "SpySym007"
+DiskId1                 = "RNET SpySym007"
+
+;Instances specific information.
+DefaultInstance         = "SpySym Instance"
+Instance1.Name          = "SpySym Instance"
+Instance1.Altitude      = "265000"
+Instance1.Flags         = 0x0
+
